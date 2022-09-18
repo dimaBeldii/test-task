@@ -1,6 +1,8 @@
-@import "default/default";
 @import "default/vars";
+@import "default/reset";
+@import "default/default";
 @import "default/fonts";
 
 @import "header/header";
-
+@import "main/main";
+@import "mobile-menu/mobile-menu";

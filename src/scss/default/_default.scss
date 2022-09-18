@@ -1,0 +1,21 @@
+body {
+  font-family: $default-font, sans-serif;
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: $mobile-size) {
+  body {
+    padding-top: 58px;
+    padding-bottom: 76px;
+    grid-template-columns: 1fr;
+  }
+}

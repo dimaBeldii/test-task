@@ -1,0 +1,50 @@
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: $mobile-size) {
+  .mobile-menu {
+    display: flex;
+    background: $white;
+    position: fixed;
+    padding: 23px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+    &__item {
+      &::before {
+        content: "";
+        background: center no-repeat;
+        background-size: 30px 30px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0px 7px 0px 0px;
+      }
+
+      &--home {
+        &::before {
+          background-image: url(@img/icons/home.svg);
+        }
+      }
+      &--search {
+        &::before {
+          background-image: url(@img/icons/search.svg);
+        }
+      }
+      &--vendor {
+        &::before {
+          background-image: url(@img/icons/vendor.svg);
+        }
+      }
+      &--cabinet {
+        &::before {
+          background-image: url(@img/icons/cabinet.svg);
+        }
+      }
+    }
+  }
+}

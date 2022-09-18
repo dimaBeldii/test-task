@@ -1,0 +1,243 @@
+.header {
+  padding: 20px;
+  background: $header-bg;
+}
+.header-profile {
+  display: flex;
+  background: $white;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  width: 100%;
+  margin: 0px 0px 12px 0px;
+
+  &__image-block {
+    padding: 0px 0px 0px 10px;
+    background: $green;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 5px;
+
+    img {
+      max-width: 40px;
+      width: 100%;
+    }
+  }
+
+  &__info {
+    padding: 6px 14px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: $font-size-8;
+    margin: 0px 0px 5px 0px;
+  }
+
+  &__raiting {
+    font-size: $font-size-10;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      background: url(@img/icons/raiting-ico.svg) center no-repeat;
+      background-size: 10px 10px;
+      display: block;
+      width: 10px;
+      height: 10px;
+      margin: -1px 3px 0px 0px;
+    }
+  }
+}
+.header-nav {
+  &__item {
+    background: $white;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: $font-size-10;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    color: $black;
+    text-decoration: none;
+    margin: 0px 0px 12px 0px;
+    transition: 0.3s linear;
+
+    &::before {
+      content: "";
+      background: center no-repeat;
+      background-size: 11px 11px;
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 0px 7px 0px 0px;
+    }
+
+    &:hover {
+      background: $lang-gray;
+      color: $white;
+    }
+
+    &--home {
+      &::before {
+        background-image: url(@img/icons/header-home.svg);
+      }
+    }
+    &--search {
+      &::before {
+        background-image: url(@img/icons/header-search.svg);
+      }
+    }
+    &--vendor {
+      &::before {
+        background-image: url(@img/icons/header-vender.svg);
+      }
+    }
+    &--language {
+      &::before {
+        background-image: url(@img/icons/header-lang.svg);
+      }
+    }
+  }
+
+  &__item--gray {
+    background: $lang-gray;
+    color: $white;
+    &:hover {
+      background: $white;
+      color: $black;
+    }
+  }
+}
+.copyright {
+  font-weight: 400;
+  font-size: $font-size-10;
+  text-align: center;
+  color: $gray;
+}
+
+.menu__icon,
+.header-items,
+.header-lang {
+  display: none;
+}
+
+@media (max-width: $mobile-size) {
+  .menu {
+    background: $green;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+
+    &__icon {
+      display: block;
+      position: relative;
+      width: 15px;
+      height: 12px;
+      cursor: pointer;
+
+      &::before,
+      &::after {
+        content: "";
+      }
+
+      span,
+      &::before,
+      &::after {
+        left: 0;
+        position: absolute;
+        height: 13%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: $white;
+      }
+
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+      }
+      &._active span {
+        transform: scale(0) translate(0px, -50%);
+      }
+      &._active::before {
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+      }
+      &._active::after {
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+      }
+    }
+    &__body {
+      position: fixed;
+      top: 58px;
+      left: -100%;
+      width: 100%;
+      height: calc(100% - 58px);
+      background-color: $white;
+      padding: 20px;
+      transition: left 0.3s ease 0s;
+      overflow: auto;
+
+      &._active {
+        left: 0;
+      }
+    }
+  }
+
+  .header {
+    height: 58px;
+    padding: 18px 15px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .header-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &__item {
+      font-weight: 400;
+      font-size: $font-size-14;
+      color: $gray;
+      background: #e8e8e8;
+      border-radius: 3px;
+      padding: 8px 12px;
+    }
+  }
+  .header-lang {
+    background: #c4f1ff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33px;
+    height: 33px;
+    margin: 0px 8px 0px auto;
+
+    &::after {
+      content: "";
+      background: url(@img/icons/lang-black.svg) center no-repeat;
+      background-size: 18px 18px;
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

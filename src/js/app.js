@@ -1,6 +1,9 @@
-import * as flsFunctions from "./modules/functions.js";
+import * as flsFunctions from "./modules/functions.js"
+import * as flsHeader from "./modules/header/header.js"
 
-flsFunctions.isWebp();
+flsFunctions.isWebp()
+
+flsHeader.burgerHeader()
 
 /*
 import Swiper, { Navigation, Pagination } from 'swiper';
